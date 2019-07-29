@@ -31,11 +31,16 @@
             this.uploadFileButton = new System.Windows.Forms.Button();
             this.textBoxUpload = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.compress_file_tab = new System.Windows.Forms.TabPage();
+            this.decompress_file_tab = new System.Windows.Forms.TabPage();
+            this.tabControl.SuspendLayout();
+            this.compress_file_tab.SuspendLayout();
             this.SuspendLayout();
             // 
             // uploadFileButton
             // 
-            this.uploadFileButton.Location = new System.Drawing.Point(453, 39);
+            this.uploadFileButton.Location = new System.Drawing.Point(343, 18);
             this.uploadFileButton.Name = "uploadFileButton";
             this.uploadFileButton.Size = new System.Drawing.Size(75, 21);
             this.uploadFileButton.TabIndex = 0;
@@ -45,26 +50,59 @@
             // 
             // textBoxUpload
             // 
-            this.textBoxUpload.Location = new System.Drawing.Point(32, 39);
+            this.textBoxUpload.Location = new System.Drawing.Point(6, 18);
             this.textBoxUpload.Name = "textBoxUpload";
-            this.textBoxUpload.Size = new System.Drawing.Size(398, 20);
+            this.textBoxUpload.Size = new System.Drawing.Size(326, 20);
             this.textBoxUpload.TabIndex = 1;
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.compress_file_tab);
+            this.tabControl.Controls.Add(this.decompress_file_tab);
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(450, 300);
+            this.tabControl.TabIndex = 2;
+            // 
+            // compress_file_tab
+            // 
+            this.compress_file_tab.Controls.Add(this.textBoxUpload);
+            this.compress_file_tab.Controls.Add(this.uploadFileButton);
+            this.compress_file_tab.Location = new System.Drawing.Point(4, 22);
+            this.compress_file_tab.Name = "compress_file_tab";
+            this.compress_file_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.compress_file_tab.Size = new System.Drawing.Size(442, 274);
+            this.compress_file_tab.TabIndex = 0;
+            this.compress_file_tab.Text = "Compress File";
+            this.compress_file_tab.UseVisualStyleBackColor = true;
+            // 
+            // decompress_file_tab
+            // 
+            this.decompress_file_tab.Location = new System.Drawing.Point(4, 22);
+            this.decompress_file_tab.Name = "decompress_file_tab";
+            this.decompress_file_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.decompress_file_tab.Size = new System.Drawing.Size(442, 274);
+            this.decompress_file_tab.TabIndex = 1;
+            this.decompress_file_tab.Text = "Decompress File";
+            this.decompress_file_tab.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxUpload);
-            this.Controls.Add(this.uploadFileButton);
+            this.ClientSize = new System.Drawing.Size(434, 261);
+            this.Controls.Add(this.tabControl);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TCompressor";
+            this.tabControl.ResumeLayout(false);
+            this.compress_file_tab.ResumeLayout(false);
+            this.compress_file_tab.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -73,6 +111,9 @@
         private System.Windows.Forms.Button uploadFileButton;
         private System.Windows.Forms.TextBox textBoxUpload;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage compress_file_tab;
+        private System.Windows.Forms.TabPage decompress_file_tab;
     }
 }
 
