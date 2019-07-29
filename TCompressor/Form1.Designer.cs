@@ -34,6 +34,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.compress_file_tab = new System.Windows.Forms.TabPage();
             this.decompress_file_tab = new System.Windows.Forms.TabPage();
+            this.compress_file = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.compress_file_tab.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // compress_file_tab
             // 
+            this.compress_file_tab.Controls.Add(this.compress_file);
             this.compress_file_tab.Controls.Add(this.textBoxUpload);
             this.compress_file_tab.Controls.Add(this.uploadFileButton);
             this.compress_file_tab.Location = new System.Drawing.Point(4, 22);
@@ -90,6 +92,16 @@
             this.decompress_file_tab.TabIndex = 1;
             this.decompress_file_tab.Text = "Decompress File";
             this.decompress_file_tab.UseVisualStyleBackColor = true;
+            // 
+            // compress_file
+            // 
+            this.compress_file.Location = new System.Drawing.Point(165, 103);
+            this.compress_file.Name = "compress_file";
+            this.compress_file.Size = new System.Drawing.Size(75, 23);
+            this.compress_file.TabIndex = 2;
+            this.compress_file.Text = "Compress";
+            this.compress_file.UseVisualStyleBackColor = true;
+            this.compress_file.Click += new System.EventHandler(this.Compress_file_Click);
             // 
             // Form1
             // 
@@ -114,6 +126,7 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage compress_file_tab;
         private System.Windows.Forms.TabPage decompress_file_tab;
+        private System.Windows.Forms.Button compress_file;
     }
 }
 

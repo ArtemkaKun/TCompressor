@@ -11,11 +11,6 @@ namespace TCompressor
             InitializeComponent();
         }
 
-        public string get_uploaded_file()
-        {
-            return uploaded_file_path;
-        }
-
         private string uploaded_file_path;
         // this func show openfiledialog (if input string is empty) and upload file that was choosed by user
         private void UploadFileButton_Click(object sender, EventArgs e)
@@ -36,6 +31,7 @@ namespace TCompressor
                     {
                         FileStream FS = File.Open(input_file_path, FileMode.Open);
                         uploaded_file_path = input_file_path;
+                        FS.Close();
                         MessageBox.Show(input_file_path + " was uploaded");
 
                     }
@@ -63,6 +59,7 @@ namespace TCompressor
                         FileStream FS = File.Open(filename, FileMode.Open);
                         uploaded_file_path = filename;
                         textBoxUpload.Text = filename;
+                        FS.Close();
                         MessageBox.Show(filename + " was uploaded");
 
                     }
@@ -71,6 +68,19 @@ namespace TCompressor
                         MessageBox.Show(filename + " doesn't exist!");
                     }
                 }
+            }
+        }
+
+        private void Compress_file_Click(object sender, EventArgs e)
+        {
+            const int min_path_length = 3; //I don't think that path to file can be shorter than 3 chars
+            if (textBoxUpload.Text.Length > min_path_length)
+            {
+                textFileReader reader = new textFileReader(uploaded_file_path);
+            }
+            else
+            {
+                MessageBox.Show("Upload file first!");
             }
         }
     }
