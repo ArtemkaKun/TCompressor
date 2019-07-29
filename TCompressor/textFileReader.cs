@@ -9,17 +9,13 @@ namespace TCompressor
         public textFileReader(string file_path)
         {
             file_path_to_compress = file_path;
-            compressingFile();
-        }
+            processingFile();
 
-        public Queue<word> getProcessedText()
-        {
-            return processed_uploaded_text;
         }
 
         private string file_path_to_compress;
         private Queue<word> processed_uploaded_text;
-        private void compressingFile()
+        private void processingFile()
         {
             var file_text = File.ReadAllText(file_path_to_compress);  //read all text in one line
             processed_uploaded_text = lineProcessing(file_text);
