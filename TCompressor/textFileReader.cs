@@ -10,7 +10,7 @@ namespace TCompressor
         {
             file_path_to_compress = file_path;
             processingFile();
-
+            Compressor compress_file = new Compressor(processed_uploaded_text);
         }
 
         private string file_path_to_compress;
