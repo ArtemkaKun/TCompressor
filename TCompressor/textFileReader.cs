@@ -30,6 +30,7 @@ namespace TCompressor
 
             for (var symbol_count = 0; symbol_count < text.Length; ++symbol_count)
             {
+
                 if (text[symbol_count] != ' ' && text[symbol_count] != '.' && text[symbol_count] != ',')
                 {
                     buffer.Enqueue(text[symbol_count]); //store one char in word
@@ -39,7 +40,7 @@ namespace TCompressor
                     buffer.Enqueue(text[symbol_count]); //store end of word symbol
                     words.Enqueue(buffer);  //store one word in words queue
                     //System.Console.WriteLine(words.Count); DEBUG
-                    buffer.Clear(); //clear buffer
+                    buffer = new word(); //clear buffer
                 }
             }
 
