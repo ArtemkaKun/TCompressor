@@ -5,7 +5,7 @@ using System.IO;
 namespace TCompressor
 {
     public partial class Form1 : System.Windows.Forms.Form
-    {
+    {       
         public Form1()
         {
             InitializeComponent();
@@ -76,7 +76,7 @@ namespace TCompressor
             const int min_path_length = 3; //I don't think that path to file can be shorter than 3 chars
             if (textBoxUpload.Text.Length > min_path_length)
             {
-                textFileReader reader = new textFileReader(uploaded_file_path);
+                Core.startCompression(uploaded_file_path);
             }
             else
             {

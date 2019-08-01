@@ -4,23 +4,24 @@ using word = System.Collections.Generic.Queue<char>;    //def custom type Queue<
 
 namespace TCompressor
 {
-    class textFileReader
+    class textFileReader : ITextReader
     {
-        public textFileReader(string file_path)
+        public textFileReader()
         {
-            file_path_to_compress = file_path;
-            processingFile();
-            Compressor compress_file = new Compressor(processed_uploaded_text);
+            
+        }
+
+        public Queue<word> startDataProcessing(string path)
+        {
+            file_path_to_compress = path;
+            var file_text = File.ReadAllText(file_path_to_compress);  //read all text in one line
+            processed_uploaded_text = lineProcessing(file_text);
+            return processed_uploaded_text;
         }
 
         private string file_path_to_compress;
         private Queue<word> processed_uploaded_text;
-        private void processingFile()
-        {
-            var file_text = File.ReadAllText(file_path_to_compress);  //read all text in one line
-            processed_uploaded_text = lineProcessing(file_text);
-        }
-
+        
         private Queue<word> lineProcessing(string text)
         {
             
